@@ -1,0 +1,35 @@
+
+Documentação:
+https://python-opcua.readthedocs.io/en/latest/
+
+
+Python para CLP e CNC
+https://pymodbus.readthedocs.io/en/latest/
+
+
+PySerial: Para comunicação serial (RS-232, RS-485)
+https://pyserial.readthedocs.io/en/latest/
+
+
+Deep learning ebook
+https://www.deeplearningbook.com.br/deep-learning-a-tempestade-perfeita/
+deeplearningbook.com.br
+
+
+
+https://mitsloanreview.com.br/engenharia-de-prompt-o-tempero-do-chatgpt/
+
+https://www.startse.com/artigos/prompt-chatgpt-engenharia/
+
+https://www.unesco.org/pt/fieldoffice/brasilia/expertise/artificial-intelligence-brazil
+
+https://www.insper.edu.br/pt/conteudos
+
+
+termo de busca
+aprendizado de máquina livro pdf
+
+livros
+Enigma. Autor: Michael Kerrigan pdf
+Alan Turing: Suas Máquinas e Seus Segredos -Capa dura –Autores: Sílvia Amélia Bim (Autor), Silvio Luiz Bragatto Boss pdf
+mente cérebro e ciência john searle pdf
