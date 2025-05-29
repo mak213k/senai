@@ -1,0 +1,19 @@
+curl ^"https://consultas.anvisa.gov.br/api/consulta/medicamento/produtos/?column=^&count=10^&filter^%^5BnomeProduto^%^5D=adventista^&order=asc^&page=1^" ^
+  -H ^"Accept: application/json, text/plain, */*^" ^
+  -H ^"Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7^" ^
+  -H ^"Authorization: Guest^" ^
+  -H ^"Cache-Control: no-cache^" ^
+  -H ^"Connection: keep-alive^" ^
+  -b ^"_cfuvid=nMDJ1ZMeQnrvrfAbvkIsPXuTYx.Pv1CuokmKHMXPAWQ-1748538045871-0.0.1.1-604800000; dtCookiew5fdz9p6=v_4_srv_4_sn_A95387B49C35D5182FE42A892E3F2EA8_perc_100000_ol_0_mul_1_app-3A70d59aa21861f7ba_1_rcs-3Acss_0; rxVisitorw5fdz9p6=1748541704510KF3L0AADK63AC3494N3H8H2ACC971T0S; dtSaw5fdz9p6=-; _pk_ref.42.210e=^%^5B^%^22^%^22^%^2C^%^22^%^22^%^2C1748541706^%^2C^%^22https^%^3A^%^2F^%^2Fgemini.google.com^%^2F^%^22^%^5D; _pk_id.42.210e=27f0daff18dffd87.1748541706.; _pk_ses.42.210e=1; cf_clearance=b5GrQO59Bu5S6KTHtZ4PAieD1_Mzeu71t5DdiAI5Q0Q-1748541706-1.2.1.1-aGT7Mod5aGzqh8tEtYi8vwPHHJov1BR9v82iXJVCxb.zpt02aNVhJgQvaekjD634GhsAfrmAmDm4e1zCKKqtveM9to8jVy0PpT5MRASmkVIfcI85qMdAiyxR1qM.INJnNojmS7GLHZeU4xW33pf42QTbohRuaLUO8DzoozAVMzT18pqSgPbRd4WSn8Yn1QeelPxRNGMO3v2HXU5hvwbpOlW3RcvqcwKs258MWiGAOMxkvxaFexsx03PeqLnV_0Wn4nGZjjrClbpDT5JvA7oSAbce53RcIlfWsCF8hH3V1USF2Hv3e3YW.X_AiSfWFnpyPYxl_uQomETNQmoo5DFbmF2DJWPqtqUB_vBMbPxBCUA; rxvtw5fdz9p6=1748543537334^|1748541704513; dtPCw5fdz9p6=4^$141704507_268h29vUHPHBUTDHDIMIARWRFPSNALWUMCMEJGM-0e0^" ^
+  -H ^"If-Modified-Since: Mon, 26 Jul 1997 05:00:00 GMT^" ^
+  -H ^"Pragma: no-cache^" ^
+  -H ^"Referer: https://consultas.anvisa.gov.br/^" ^
+  -H ^"Sec-Fetch-Dest: empty^" ^
+  -H ^"Sec-Fetch-Mode: cors^" ^
+  -H ^"Sec-Fetch-Site: same-origin^" ^
+  -H ^"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36^" ^
+  -H ^"sec-ch-ua: ^\^"Chromium^\^";v=^\^"136^\^", ^\^"Google Chrome^\^";v=^\^"136^\^", ^\^"Not.A/Brand^\^";v=^\^"99^\^"^" ^
+  -H ^"sec-ch-ua-mobile: ?0^" ^
+  -H ^"sec-ch-ua-platform: ^\^"Windows^\^"^" ^
+  -H ^"x-dtpc: 4^$141704507_268h29vUHPHBUTDHDIMIARWRFPSNALWUMCMEJGM-0e0^" ^
+  -H ^"x-dtreferer: https://consultas.anvisa.gov.br/^"
