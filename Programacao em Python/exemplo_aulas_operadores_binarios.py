@@ -103,3 +103,10 @@ Qual o valor de print(~0)?
 
 
 '''
+
+
+'''
+
+'''
+a = [x for x in range(0,100)]
+print(a)
