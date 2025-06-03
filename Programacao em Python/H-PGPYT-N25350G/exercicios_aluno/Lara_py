@@ -1,0 +1,47 @@
+import http.server # Importa o módulo http.server que nos ajuda a criar servidores HTTP
+import socketserver # Importa o módulo socketserver para lidar com as conexões de rede
+
+# Define a porta em que o servidor irá escutar.
+# A porta 8000 é uma escolha comum para desenvolvimento.
+PORTA = 8000
+
+# Define o manipulador (handler) de requisições HTTP.
+# SimpleHTTPRequestHandler serve arquivos do diretório atual onde o script está sendo executado.
+Handler = http.server.SimpleHTTPRequestHandler
+
+# Inicia o servidor.
+# socketserver.TCPServer cria um servidor TCP que escuta na porta especificada.
+# O segundo argumento (Handler) diz ao servidor como lidar com as requisições.
+with socketserver.TCPServer(("", PORTA), Handler) as httpd:
+    print(f"Servidor web rodando na porta {PORTA}")
+    print(f"Para acessar, abra seu navegador e digite: http://localhost:{PORTA}")
+    print("Pressione Ctrl+C para parar o servidor.")
+
+    # Mantém o servidor rodando indefinidamente até que seja interrompido (ex: Ctrl+C)
+    httpd.serve_forever()
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Servidor Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá do Meu Servidor Python!</h1>
+    <p>Este é um arquivo HTML servido pelo seu próprio servidor web.</p>
+</body>
+</html>
