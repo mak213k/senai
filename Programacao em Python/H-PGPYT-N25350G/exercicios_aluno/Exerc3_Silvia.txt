@@ -1,0 +1,8 @@
+compra= float(input('Registre o valor da compra?'))
+desconto= compra * 0.10
+valor_final= (compra - desconto)
+if compra > 100:
+    print= input("valor_final") 
+    
+else:
+  print('Infelizmente sua compra nao gerou desconto')
