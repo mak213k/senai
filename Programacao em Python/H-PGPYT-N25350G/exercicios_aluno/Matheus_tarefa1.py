@@ -24,6 +24,10 @@
 # elif imc < 40:print("obesidade")
 # else: print("obesidede grave")
 
-total = input("Digite o valor da compra:")
-if total > 100:
+total = float(input("Digite total da compra:R$"))
+# if total>100: 
+#     total-=total* 0.1
+# print(f"Total de descontos(10%):R${total:.2f}")
+
+# print(f"Total:RS{total:.2f}") 
 
