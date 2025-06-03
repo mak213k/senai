@@ -1,0 +1,42 @@
+print("--- Verificando Valores Verdadeiros e Falsos em Python ---")
+print("\n## 1. Valores Booleanos Explícitos")
+print(f"O valor True é avaliado como: {bool(True)}")
+print(f"O valor False é avaliado como: {bool(False)}")
+
+print("\n## 2. Números")
+print(f"O número 0 é avaliado como: {bool(0)}")
+print(f"O número 1 é avaliado como: {bool(1)}")
+print(f"O número -5 é avaliado como: {bool(-5)}")
+print(f"O número 3.14 é avaliado como: {bool(3.14)}")
+
+print("\n## 3. Strings")
+print(f"Uma string vazia ('') é avaliada como: {bool('')}")
+print(f"A string 'Olá' é avaliada como: {bool('Olá')}")
+print(f"A string ' ' (espaço) é avaliada como: {bool(' ')}")
+
+print("\n## 4. Listas, Tuplas, Dicionários e Sets")
+print(f"Uma lista vazia ([]) é avaliada como: {bool([])}")
+print(f"Uma lista com itens ([1, 2]) é avaliada como: {bool([1, 2])}")
+print(f"Uma tupla vazia (()) é avaliada como: {bool(())}")
+print(f"Uma tupla com itens ((1,)) é avaliada como: {bool((1,))}")
+print(f"Um dicionário vazio ({{}}) é avaliado como: {bool({})}")
+print(f"Um dicionário com itens ({{'a': 1}}) é avaliado como: {bool({'a': 1})}")
+print(f"Um set vazio (set()) é avaliado como: {bool(set())}")
+print(f"Um set com itens ({{1, 2}}) é avaliado como: {bool({1, 2})}")
+
+print("\n## 5. None")
+print(f"O valor None é avaliado como: {bool(None)}")
+
+print("\n## 6. Expressões Lógicas e Comparação")
+x = 10
+y = 5
+
+print(f"A expressão 'x > y' (10 > 5) é avaliada como: {bool(x > y)}")
+print(f"A expressão 'x < y' (10 < 5) é avaliada como: {bool(x < y)}")
+print(f"A expressão 'x == 10' (10 == 10) é avaliada como: {bool(x == 10)}")
+print(f"A expressão 'x != 5' (10 != 5) é avaliada como: {bool(x != 5)}")
+print(f"A expressão 'True and False' é avaliada como: {bool(True and False)}")
+print(f"A expressão 'True or False' é avaliada como: {bool(True or False)}")
+print(f"A expressão 'not True' é avaliada como: {bool(not True)}")
+
+print("\n--- Fim do Programa ---")
