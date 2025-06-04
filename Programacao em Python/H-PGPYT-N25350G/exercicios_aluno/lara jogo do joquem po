@@ -1,0 +1,98 @@
+import random
+import time
+
+def exibir_regras():
+    """Exibe as regras do Joquem Pô."""
+    print("\n--- Regras do Joquem Pô ---")
+    print("Pedra ganha da Tesoura (quebra a tesoura).")
+    print("Tesoura ganha do Papel (corta o papel).")
+    print("Papel ganha da Pedra (embrulha a pedra).")
+    print("Se ambos escolherem o mesmo, é um empate!")
+    print("---------------------------\n")
+
+def obter_escolha_jogador():
+    """Solicita a escolha do jogador e valida a entrada."""
+    while True:
+        escolha = input("Sua escolha (Pedra, Papel ou Tesoura): ").lower()
+        if escolha in ["pedra", "papel", "tesoura"]:
+            return escolha
+        else:
+            print("Escolha inválida. Por favor, digite 'Pedra', 'Papel' ou 'Tesoura'.")
+
+def obter_escolha_computador():
+    """Gera a escolha aleatória do computador."""
+    opcoes = ["pedra", "papel", "tesoura"]
+    return random.choice(opcoes)
+
+def determinar_vencedor(escolha_jogador, escolha_computador):
+    """Determina o vencedor da rodada."""
+    if escolha_jogador == escolha_computador:
+        return "empate"
+    elif (escolha_jogador == "pedra" and escolha_computador == "tesoura") or \
+         (escolha_jogador == "papel" and escolha_computador == "pedra") or \
+         (escolha_jogador == "tesoura" and escolha_computador == "papel"):
+        return "jogador"
+    else:
+        return "computador"
+
+def jogar_rodada():
+    """Executa uma única rodada do jogo."""
+    exibir_regras()
+    
+    escolha_jogador = obter_escolha_jogador()
+    escolha_computador = obter_escolha_computador()
+
+    print(f"\nVocê escolheu: {escolha_jogador.capitalize()}")
+    # Adicionando um pequeno atraso para simular o "Jo-Quem-Pô!"
+    time.sleep(0.8) 
+    print(f"O computador escolheu: {escolha_computador.capitalize()}")
+    time.sleep(0.8)
+
+    resultado = determinar_vencedor(escolha_jogador, escolha_computador)
+
+    if resultado == "empate":
+        print("--- Resultado: Empate! ---")
+        return "empate"
+    elif resultado == "jogador":
+        print("--- Resultado: Você ganhou! ---")
+        return "jogador"
+    else:
+        print("--- Resultado: Você perdeu! ---")
+        return "computador"
+
+def main():
+    """Função principal que gerencia o fluxo do jogo."""
+    print("███ Bem-vindo ao Joquem Pô Aprimorado! ███")
+    
+    placar_jogador = 0
+    placar_computador = 0
+    rodadas_jogadas = 0
+
+    while True:
+        rodadas_jogadas += 1
+        print(f"\n--- Rodada {rodadas_jogadas} ---")
+        
+        resultado_rodada = jogar_rodada()
+
+        if resultado_rodada == "jogador":
+            placar_jogador += 1
+        elif resultado_rodada == "computador":
+            placar_computador += 1
+        
+        print(f"\n--- Placar: Você {placar_jogador} x {placar_computador} Computador ---")
+
+        jogar_novamente = input("Deseja jogar novamente? (s/n): ").lower()
+        if jogar_novamente != 's':
+            print("\nObrigado por jogar! Placar final:")
+            print(f"Você: {placar_jogador} | Computador: {placar_computador}")
+            if placar_jogador > placar_computador:
+                print("Parabéns, você é o grande vencedor!")
+            elif placar_computador > placar_jogador:
+                print("Que pena, o computador foi o campeão desta vez!")
+            else:
+                print("O jogo terminou empatado no placar geral!")
+            break
+
+# Inicia o jogo quando o script é executado
+if __name__ == "__main__":
+    main()
