@@ -1,0 +1,235 @@
+def eh_bissexto(ano):
+    """
+    Verifica se um ano é bissexto de acordo com as regras do calendário gregoriano.
+
+    Args:
+        ano (int): O ano a ser verificado.
+
+    Returns:
+        bool: True se o ano for bissexto, False caso contrário.
+    """
+    if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+        return True
+    else:
+        return False
+
+# Exemplos de uso:
+print(f"2020 é bissexto? {eh_bissexto(2020)}")
+print(f"2100 é bissexto? {eh_bissexto(2100)}")
+print(f"2400 é bissexto? {eh_bissexto(2400)}")
+print(f"2023 é bissexto? {eh_bissexto(2023)}")
+
+def calcular_media_harmonica(valores):
+    """
+    Calcula a média harmônica de uma lista de valores.
+
+    Args:
+        valores (list): Uma lista de números.
+
+    Returns:
+        float: A média harmônica dos valores. Retorna 0 se a lista estiver vazia
+               ou contiver zero, pois a média harmônica não é definida para zero.
+    """
+    if not valores:
+        return 0.0
+    
+    # Verifica se há algum zero na lista, pois 1/0 é indefinido
+    if 0 in valores:
+        print("Erro: A média harmônica não pode ser calculada se um dos valores for zero.")
+        return 0.0
+
+    inversos = [1 / valor for valor in valores]
+    media_aritmetica_inversos = sum(inversos) / len(inversos)
+
+    if media_aritmetica_inversos == 0:
+        return 0.0  # Evita divisão por zero se todos os inversos forem zero (o que não deve acontecer aqui)
+    else:
+        return 1 / media_aritmetica_inversos
+
+def main_media_harmonica():
+    print("--- Cálculo da Média Harmônica ---")
+    valores_digitados = []
+    while True:
+        try:
+            entrada = input("Digite um número para adicionar (ou 'fim' para calcular): ")
+            if entrada.lower() == 'fim':
+                break
+            valor = float(entrada)
+            if valor <= 0:
+                print("Por favor, digite apenas números positivos para a média harmônica.")
+            else:
+                valores_digitados.append(valor)
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número ou 'fim'.")
+
+    if valores_digitados:
+        media_harmonica = calcular_media_harmonica(valores_digitados)
+        if media_harmonica != 0.0:
+            print(f"\nOs valores digitados são: {valores_digitados}")
+            print(f"A média harmônica é: {media_harmonica:.4f}")
+    else:
+        print("Nenhum valor foi digitado para o cálculo.")
+
+# Para executar o algoritmo da média harmônica, descomente a linha abaixo:
+# main_media_harmonica()
+
+import math
+from collections import Counter
+
+def calcular_estatisticas(dados):
+    """
+    Calcula a média, moda, mediana e quartis de um conjunto de dados.
+
+    Args:
+        dados (list): Uma lista de números.
+
+    Returns:
+        dict: Um dicionário contendo a média, moda, mediana e quartis.
+    """
+    if not dados:
+        return {
+            "media": None,
+            "moda": None,
+            "mediana": None,
+            "Q1": None,
+            "Q2": None,
+            "Q3": None
+        }
+
+    # 1. Média
+    media = sum(dados) / len(dados)
+
+    # 2. Moda
+    contagem = Counter(dados)
+    max_frequencia = 0
+    if contagem: # Verifica se a lista não está vazia para evitar erro com max()
+        max_frequencia = max(contagem.values())
+    
+    moda = [valor for valor, freq in contagem.items() if freq == max_frequencia]
+    if len(moda) == len(dados): # Se todos os elementos aparecem com a mesma frequência, não há moda
+        moda = "Não há moda (todos os valores aparecem com a mesma frequência)"
+    elif len(moda) == 1:
+        moda = moda[0]
+    # Se houver múltiplas modas, a lista 'moda' já as contém.
+
+    # 3. Mediana
+    dados_ordenados = sorted(dados)
+    n = len(dados_ordenados)
+    if n % 2 == 1:
+        mediana = dados_ordenados[n // 2]
+    else:
+        mediana = (dados_ordenados[n // 2 - 1] + dados_ordenados[n // 2]) / 2
+
+    # 4. Quartis
+    # Q2 é a mediana
+    Q2 = mediana
+
+    # Função auxiliar para calcular quartis de sub-listas
+    def calcular_mediana_para_quartil(lista):
+        tamanho = len(lista)
+        if tamanho % 2 == 1:
+            return lista[tamanho // 2]
+        else:
+            return (lista[tamanho // 2 - 1] + lista[tamanho // 2]) / 2
+
+    # Calcula Q1
+    if n % 2 == 1:
+        # Quando o número de elementos é ímpar, o elemento central (mediana) não entra nos subgrupos
+        primeira_metade = dados_ordenados[:n // 2]
+    else:
+        # Quando o número de elementos é par, divide a lista ao meio
+        primeira_metade = dados_ordenados[:n // 2]
+    
+    Q1 = calcular_mediana_para_quartil(primeira_metade)
+
+    # Calcula Q3
+    if n % 2 == 1:
+        # Quando o número de elementos é ímpar, o elemento central (mediana) não entra nos subgrupos
+        segunda_metade = dados_ordenados[n // 2 + 1:]
+    else:
+        # Quando o número de elementos é par, divide a lista ao meio
+        segunda_metade = dados_ordenados[n // 2:]
+    
+    Q3 = calcular_mediana_para_quartil(segunda_metade)
+
+
+    return {
+        "media": media,
+        "moda": moda,
+        "mediana": mediana,
+        "Q1": Q1,
+        "Q2": Q2, # Q2 é sempre igual à mediana
+        "Q3": Q3
+    }
+
+def main_estatisticas():
+    print("--- Cálculo de Média, Moda, Mediana e Quartis ---")
+    valores_digitados = []
+    while True:
+        try:
+            entrada = input("Digite um número para adicionar (ou 'fim' para calcular): ")
+            if entrada.lower() == 'fim':
+                break
+            valor = float(entrada)
+            valores_digitados.append(valor)
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número ou 'fim'.")
+
+    if valores_digitados:
+        resultados = calcular_estatisticas(valores_digitados)
+        print(f"\nConjunto de dados: {sorted(valores_digitados)}")
+        print(f"Média: {resultados['media']:.2f}")
+        print(f"Moda: {resultados['moda']}")
+        print(f"Mediana: {resultados['mediana']:.2f}")
+        print(f"Primeiro Quartil (Q1): {resultados['Q1']:.2f}")
+        print(f"Segundo Quartil (Q2 - Mediana): {resultados['Q2']:.2f}")
+        print(f"Terceiro Quartil (Q3): {resultados['Q3']:.2f}")
+    else:
+        print("Nenhum valor foi digitado para o cálculo.")
+
+import math
+
+def calcular_media(dados):
+    """Calcula a média de uma lista de números."""
+    if not dados:
+        return 0
+    return sum(dados) / len(dados)
+
+def calcular_desvio_padrao(dados, media):
+    """Calcula o desvio padrão de uma lista de números."""
+    if len(dados) < 2: # Desvio padrão requer pelo menos 2 pontos de dados
+        return 0
+    variancia = sum([(x - media) ** 2 for x in dados]) / (len(dados) - 1) # Desvio padrão amostral
+    return math.sqrt(variancia)
+
+def main_distribuicao_normal():
+    print("--- Cálculo de Variáveis para Distribuição Normal ---")
+    valores_digitados = []
+    while True:
+        try:
+            entrada = input("Digite um número para adicionar (ou 'fim' para calcular): ")
+            if entrada.lower() == 'fim':
+                break
+            valor = float(entrada)
+            valores_digitados.append(valor)
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número ou 'fim'.")
+
+    if len(valores_digitados) >= 2: # Pelo menos 2 valores para calcular desvio padrão
+        media_calculada = calcular_media(valores_digitados)
+        desvio_padrao_calculado = calcular_desvio_padrao(valores_digitados, media_calculada)
+
+        print(f"\nValores digitados: {valores_digitados}")
+        print(f"Média (μ): {media_calculada:.4f}")
+        print(f"Desvio Padrão (σ): {desvio_padrao_calculado:.4f}")
+        print("\nEsses são os dois parâmetros essenciais para definir uma Distribuição Normal.")
+        print("Com eles, você pode, por exemplo, calcular a probabilidade de um valor ocorrer na distribuição.")
+    elif len(valores_digitados) == 1:
+        print("\nVocê digitou apenas um valor.")
+        print(f"Média (μ): {valores_digitados[0]:.4f}")
+        print("Não é possível calcular o desvio padrão com apenas um valor, pois ele representa a dispersão dos dados.")
+    else:
+        print("Nenhum valor foi digitado para o cálculo.")
+
+# Para executar o algoritmo da distribuição normal, descomente a linha abaixo:
+# main_distribuicao_normal()
