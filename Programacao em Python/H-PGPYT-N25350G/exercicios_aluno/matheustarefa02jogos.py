@@ -18,4 +18,4 @@ chute=int(input("adivine um numero entre 1 e 5:"))
 if chute ==numero_secreto:
     print("voce ganhou !")
 else:
-    print(f"Nao foi desta vez.0 numero era{numero_secreto}.")
+    print(f"Nao foi desta vez. numero era{numero_secreto}.")
