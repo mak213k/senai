@@ -19,3 +19,20 @@ if chute ==numero_secreto:
     print("voce ganhou !")
 else:
     print(f"Nao foi desta vez. numero era{numero_secreto}.")
+
+
+dia=int(input("Escolha 1,2,3,4,5,:" ))
+
+match dia:
+    case 1:
+        print("Segunda Feira")
+    case 2:
+        print("Terça Feira ")
+    case 3:
+        print("Quarta Feira")
+    case 4:
+        print("Quinta Feira")
+    case 5:
+        print("Sexta Feira")    
+    case _:
+        print("Final De Semana")
