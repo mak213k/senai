@@ -36,3 +36,12 @@ match dia:
         print("Sexta Feira")    
     case _:
         print("Final De Semana")
+
+
+i=int(input("inicio:"))
+f=int(input("fim:"))
+while i <= f:
+    print(f"{i} é  {'par' if i % 2 == 0 else 'impar'}")
+    i+=1
+
+
