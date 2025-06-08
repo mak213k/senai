@@ -1,0 +1,65 @@
+print('Vamos jogar jankenpon')
+jogador1 = input('Digite o nome do jogador 1 ')
+jogador2 = input('Digite o nome do jogador 2 ')
+
+pedra = 1
+papel = 2
+tesoura = 3
+
+jog1 = int(input('Jogador 1 escolha entre as opções 1 para pedra, 2 para papel, 3 para tesoura '))
+jog2 = int(input('Jogador 2 escolha entre as opções 1 para pedra, 2 para papel, 3 para tesoura '))
+
+if jog1 == jog2:
+    print('Jogar novamente')
+if (jog1 == 1) & (jog2 == 2):
+    print( jogador2, 'venceu')
+if (jog1 == 1) & (jog2 == 3):
+    print( jogador1, 'venceu')
+if (jog1 == 2) & (jog2 == 1):
+    print( jogador1, 'venceu')
+if (jog1 == 2) & (jog2 == 3):
+    print( jogador2, 'venceu')
+if (jog1 == 3) & (jog2 == 1):
+    print(jogador2, 'venceu')
+if (jog1 == 3) & (jog2 == 2):
+    print(jogador1, 'venceu')
+
+#-------------------------------------------------------------------------------------------
+
+print("Vamos jogar par ou impar ")
+
+jogador1 = input("Digite o nome do jogador 1 ")
+jogador2 = input("digite o nome do jogador 2 ")
+
+jog1 = int(input("Jogador 1 escolha entre 1 para impar ou 2 para par: "))
+jog2 = int(input("Jogador 2 escolha entre 1 para impar ou 2 para par: "))
+
+
+n1 = int(input("Jogador 1 digite o seu numero "))
+n2 = int(input("jogador 2 digite o seu numero "))
+
+if jog1 == 1 and jog2 == 2:
+    print("certo")
+    if  n1 % 2 == 1 and n2 % 2 == 0:
+        print(" venceu ", jogador1)
+    if  n1 % 2 == 0 and n2 % 2 == 1:
+        print(" venceu ", jogador2) 
+if jog1 == 2 and jog2 == 1:
+    print("certo")
+    if  n1 % 2 == 0 and n2 % 2 == 1:
+        print(" venceu ", jogador1)
+    if  n1 % 2 == 1 and n2 % 2 == 0:
+        print(" venceu ", jogador2)
+
+#-------------------------------------------------------------------------------------------
+
+import random
+print("*Adivinhe o numero*")
+n1 = int(input("Escolha um numero entre 1 e 5 "))
+sorteio = random.randint(1,5)
+maquina = sorteio
+
+if n1 == maquina:
+    print("Você ganhou, máquina ",maquina)
+else:
+    print("Não foi dessa vez, máquina: ", maquina)
