@@ -39,3 +39,37 @@ def calcular_media_vendas(vendas):
 vendas = [1200, 900, 1500, 800, 1100]
 calcular_media_vendas(vendas)
 
+
+
+
+
+# 1.CRIE UMA FUNÇÃO PARA COMPARAR 2 NÚMEROS (par ou impar). UTILIZE VARIÁVEIS LOCAIS
+
+
+
+
+# 2 CRIE UMA FUNÇÃO PARA MULTIPLICAR 3 NUMEROS
+
+# def multiplicar(a,b,c):
+#  return a * b * b
+# print(multiplicar(5,10,20))
+
+
+
+
+# 4.CRIE UMA FUNÇÃO PARA MOSTRAR UMA MENSAGEM PERSONALIZADA NA TELA, SE O USUÁRIO  DIGITAR, 18 ANOS
+
+# idade=int(input("Digite Sua Idade:"))
+# if idade == 18:
+#     print("Parabens Voce é Maior de Idade!")
+# else:
+#     print("Sua Idade",idade,"Anos.")
+        
+
+
+# 5 DESENVOLVA UMA FUNÇÃO PARA DESCOBRIR A IDADE DE UMA PESSOA
+
+# idade=input("Digite Sua Idade:")
+# print(idade)
+
+
